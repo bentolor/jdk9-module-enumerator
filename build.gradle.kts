@@ -1,6 +1,12 @@
 plugins {
     java
     application
+    id ("com.zyxist.chainsaw") version "0.3.1"
+}
+
+configure<JavaPluginExtension> {
+    sourceCompatibility = JavaVersion.VERSION_12
+    targetCompatibility = JavaVersion.VERSION_12
 }
 
 repositories {
@@ -12,5 +18,6 @@ dependencies {
 }
 
 application {
-    mainClassName = "de.exxcellent.Main"
+    mainClassName = "bentolor.jdkenumerator.JdkDictionaryExtractor"
 }
+
