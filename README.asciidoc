@@ -1,0 +1,25 @@
+= JDK9 Jigsaw Module JDK Enumerator
+Benjamin Schmid <benjamin.schmid@exxcellent.de>
+
+This little project tries to enumerate all JDK 12 accessible symbols and build a
+word list as spell checker dictionary.
+
+This project uses the great work of the
+link:https://github.com/classgraph/classgraph[classgraph project]
+
+== Usage
+
+Point your JDK to the desired JDK12 and simply start the application
+
+
+    export JDK_HOME=/path/to/jdk12/
+    ./gradle run
+
+
+=== Adding newly added modules (JDK13+)
+
+The application relies, that you declare the JDK default modules as `requires`
+dependency in the `src/main/java/module-info.java`. You can obtain a full list
+of the JDK observable modules via
+
+    java --list-modules
