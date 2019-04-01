@@ -47,7 +47,7 @@ public final class JdkDictionaryExtractor {
         try (var sr = cg.scan()) {
             log("Found "+sr.getModules().size()+" JDK modules");
             sr.getAllClasses().stream()
-                    .filter(ci -> ci.isPublic() && !ci.isAnonymousInnerClass() && !ci.isInnerClass() && !isInternalPackage(ci))
+                    .filter(ci -> ci.isPublic() && !ci.isAnonymousInnerClass() && !isInternalPackage(ci))
                     .forEach(this::handleClass);
         }
 
